@@ -11,11 +11,11 @@ on:
 
 jobs:
   docker-operations:
-    name: "Pull e verificação da imagem"
+    name: "Pull e verificacao da imagem"
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Checkout do código"
+      - name: "Checkout do codigo"
         uses: actions/checkout@v4
 
       - name: "Baixar a imagem Docker"
@@ -23,12 +23,11 @@ jobs:
           echo "Baixando a imagem: ${{ inputs.imagem }}"
           docker pull ${{ inputs.imagem }}
 
-      - name: "Listar imagens disponíveis no runner"
+      - name: "Listar imagens disponiveis no runner"
         run: |
-          echo "Imagens Docker disponíveis no runner:"
+          echo "Imagens Docker disponiveis no runner:"
           docker images
 
-      # ===== DESAFIO ADICIONAL (Docker Scout) =====
       - name: "Instalar Docker Scout CLI"
         run: |
           curl -fsSL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh -o install-scout.sh
